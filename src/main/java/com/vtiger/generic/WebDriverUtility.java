@@ -129,7 +129,7 @@ public class WebDriverUtility
 	 * @param driver
 	 * @param windowtitleexp
 	 */
-	public void switchtochildwindow(WebDriver driver, String windowtitleexp) 
+	public void switchtowindow(WebDriver driver, String windowtitleexp) 
 	{
 		Set<String> set=driver.getWindowHandles();
 		Iterator<String> it = set.iterator();

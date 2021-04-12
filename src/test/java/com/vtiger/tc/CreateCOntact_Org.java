@@ -28,7 +28,6 @@ public class CreateCOntact_Org {
 		String PWD=fu.readDatafrompropfile(IConstants.propfilepath, "password");
 		String URL=fu.readDatafrompropfile(IConstants.propfilepath, "url");
 
-
 		WebDriver driver = new ChromeDriver();
 		wdu.maximizewindow(driver);
 		driver.get(URL);
@@ -45,24 +44,12 @@ public class CreateCOntact_Org {
 
 		driver.findElement(By.xpath("//input[@name='account_name']//following-sibling::img")).click();
 
-		String parent = driver.getWindowHandle();
-		Set<String> child = driver.getWindowHandles();
-		Iterator<String> childWin = child.iterator();
-
-		while(childWin.hasNext())
-		{
-			String childWindow = childWin.next();
-			if(!parent.equalsIgnoreCase(childWindow))
-			{
-				driver.switchTo().window(childWindow);
-				driver.findElement(By.id("search_txt")).sendKeys("TCS");
-				driver.findElement(By.xpath("//input[@name='search']")).click();
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//a[@id='1']")).click();
-			}
-		}
-
-		driver.switchTo().window(parent) ;
+		wdu.switchtowindow(driver, "childwindtit");
+		driver.findElement(By.id("search_txt")).sendKeys("TCS");
+		driver.findElement(By.xpath("//input[@name='search']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[@id='1']")).click();
+		wdu.switchtowindow(driver, "Contacts");
 		driver.findElement(By.xpath("//input[@class='crmButton small save']")).click();
 
 
