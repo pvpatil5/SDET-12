@@ -1,7 +1,10 @@
 package com.vtiger.generic;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,8 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverUtility 
-{
 
+{
 
 	/**
 	 * Maximize the browser window
@@ -42,7 +45,7 @@ public class WebDriverUtility
 	 * @param visibletext
 	 */
 
-	public void selectbyvisisbletextdd(WebElement element,String visibletext)
+	public void selectdropdown(WebElement element,String visibletext)
 	{
 		Select select = new Select(element);
 		select.selectByVisibleText(visibletext);
@@ -52,18 +55,19 @@ public class WebDriverUtility
 	 * @param element
 	 * @param index
 	 */
-	public void selectbyindexdd(WebElement element,int index)
+	public void selectdropdown(WebElement element,int index)
 	{
 		Select select = new Select(element);
 		select.selectByIndex(index);
 	}
 	/**
+	 * @author AMAR-G
 	 * Select elemet from dd by value
 	 * @param element
 	 * @param value
 	 */
 
-	public void selectbyvaluedd(WebElement element,String value)
+	public void selectdropdownbyvalue(WebElement element,String value)
 	{
 		Select select = new Select(element);
 		select.selectByValue(value);
@@ -79,27 +83,108 @@ public class WebDriverUtility
 	 * Switch frame by index
 	 * @param index
 	 */
-	public void switchframebyindex(WebDriver driver,int index) 
+	public void switchframe(WebDriver driver,int index) 
 	{
 		driver.switchTo().frame(index);
 	}
-
-	public void switchbyelement(WebDriver driver,WebElement frameElement) {
+	/**
+	 * switch frame bywebelement
+	 * @param driver
+	 * @param frameElement
+	 */
+	public void switchframe(WebDriver driver,WebElement frameElement) {
 		driver.switchTo().frame(frameElement);
 	}
-
-	public void switchframebynameorid(WebDriver driver,String nameorId) {
+	/**
+	 * Switch frame by name or id
+	 * @param driver
+	 * @param nameorId
+	 */
+	public void switchframe(WebDriver driver,String nameorId) {
 		driver.switchTo().frame(nameorId);
 	}
 
+	/**
+	 * Move to expected element
+	 * @param driver
+	 * @param element
+	 */
 	public void movetoelement(WebDriver driver, WebElement element) {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
 	}
-	
+	/**
+	 * Drag and Drop
+	 * @param driver
+	 * @param src
+	 * @param dest
+	 */
 	public void draganddrop(WebDriver driver, WebElement src, WebElement dest) {
 		Actions action = new Actions(driver);
 		action.dragAndDrop(src, dest).perform();
 	}
+
+	/**
+	 * Switch tom desired windows
+	 * @param driver
+	 * @param windowtitleexp
+	 */
+	public void switchtochildwindow(WebDriver driver, String windowtitleexp) 
+	{
+		Set<String> set=driver.getWindowHandles();
+		Iterator<String> it = set.iterator();
+
+		while(it.hasNext()) 
+		{
+			String winid = it.next();
+			driver.switchTo().window(winid);
+			String acttitle = driver.getTitle();
+			if(acttitle.contains(windowtitleexp)) 
+			{
+				break;
+			}
+		}
+	}
+	/**
+	 * Wait for elemet until it is displayed
+	 * @param element
+	 * @throws InterruptedException
+	 */
+	public void waitforElement(WebElement element) throws InterruptedException 
+	{
+		int count=0;
+		while(count<40) 
+			try{
+
+				element.isDisplayed();
+				break;
+			}
+		catch(Exception e)
+		{
+			Thread.sleep(500);
+			count++;
+		}
+	}
+	/**
+	 * Wait for element and once availabel click on it.
+	 * @param driver
+	 * @param xpath
+	 * @throws InterruptedException
+	 */
+	public void waitandclick(WebDriver driver,String xpath) throws InterruptedException 
+	{
+		int count=0;
+		while(count<40) 
+			try{
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+			}
+		catch(Exception e)
+		{
+			Thread.sleep(500);
+			count++;
+		}
+	}
+
 
 }

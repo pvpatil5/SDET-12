@@ -33,7 +33,7 @@ public class CreateOrg {
 	ExcelUtility eu= new ExcelUtility();
 	WebDriverUtility wdu= new WebDriverUtility();
 	@Test
-	public void createOrg() throws IOException {
+	public void createOrg() throws IOException, InterruptedException {
 		int randomnumber=	jv.createRandomNumber();
 
 
@@ -57,7 +57,7 @@ public class CreateOrg {
 		wdu.maximizewindow(driver);
 		driver.get(URL);
 		wdu.implicitwait(driver);
-		
+
 		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(UN);
 		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(PWD);
 		driver.findElement(By.id("submitButton")).click();
@@ -68,15 +68,15 @@ public class CreateOrg {
 		driver.findElement(By.xpath("//input[@name='accountname']")).sendKeys(orgname);
 		driver.findElement(By.id("phone")).sendKeys(phonenumber);
 
-		WebElement industry1=	driver.findElement(By.xpath("//select[@name='industry']"));
-		wdu.selectbyvisisbletextdd(industry1, indDD);
+		WebElement industry=	driver.findElement(By.xpath("//select[@name='industry']"));
+		wdu.selectdropdown(industry, indDD);
 
 		WebElement rating= driver.findElement(By.xpath("//select[@name='rating']"));
-		wdu.selectbyvisisbletextdd(rating, ratingDD);
+		wdu.selectdropdown(rating, ratingDD);
 
 
 		WebElement type=driver.findElement(By.xpath("//select[@name='accounttype']"));
-		wdu.selectbyvisisbletextdd(type, typeDD);
+		wdu.selectdropdown(type, typeDD);
 
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 		wdu.refresh(driver);
@@ -91,14 +91,16 @@ public class CreateOrg {
 		searchbox.sendKeys(orgname);
 
 		WebElement orgnamedd=driver.findElement(By.xpath("//div[@id='basicsearchcolumns_real']/select[@id='bas_searchfield']"));
-		wdu.selectbyvisisbletextdd(orgnamedd, "Organization Name");
+		wdu.selectdropdown(orgnamedd, "Organization Name");
 		driver.findElement(By.xpath("//input[@name='submit']")).click();
 
-		String actualorgname=driver.findElement(By.xpath("//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']")).getText();
+		WebElement actualorgname=driver.findElement(By.xpath("//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']"));
 
-		System.out.println(actualorgname);
+		wdu.waitforElement(actualorgname);
 
-		boolean result=actualorgname.contains(orgname);
+		System.out.println(actualorgname.getText());
+
+		boolean result=actualorgname.getText().contains(orgname);
 
 		System.out.println(result);
 

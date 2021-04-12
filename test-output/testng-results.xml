@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85449" started-at="2021-04-09T11:09:41Z" finished-at="2021-04-09T11:11:06Z">
+  <suite name="Default suite" duration-ms="83727" started-at="2021-04-12T09:54:28Z" finished-at="2021-04-12T09:55:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85449" started-at="2021-04-09T11:09:41Z" finished-at="2021-04-09T11:11:06Z">
+    <test name="Default test" duration-ms="83727" started-at="2021-04-12T09:54:28Z" finished-at="2021-04-12T09:55:52Z">
       <class name="com.vtiger.tc.CreateOrg">
-        <test-method status="PASS" signature="createOrg()[pri:0, instance:com.vtiger.tc.CreateOrg@148080bb]" name="createOrg" duration-ms="85140" started-at="2021-04-09T11:09:41Z" finished-at="2021-04-09T11:11:06Z">
+        <test-method status="PASS" signature="createOrg()[pri:0, instance:com.vtiger.tc.CreateOrg@148080bb]" name="createOrg" duration-ms="83623" started-at="2021-04-12T09:54:28Z" finished-at="2021-04-12T09:55:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrg -->

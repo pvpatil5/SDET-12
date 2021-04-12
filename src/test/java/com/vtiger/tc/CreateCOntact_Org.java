@@ -10,11 +10,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.vtiger.generic.ExcelUtility;
 import com.vtiger.generic.FileUtility;
 import com.vtiger.generic.IConstants;
+import com.vtiger.generic.JavaUtility;
+import com.vtiger.generic.WebDriverUtility;
 public class CreateCOntact_Org {
 
-	FileUtility fu = new FileUtility();
+	JavaUtility jv = new JavaUtility();
+	FileUtility fu=  new FileUtility();
+	ExcelUtility eu= new ExcelUtility();
+	WebDriverUtility wdu= new WebDriverUtility();
 	@Test
 	public void createcontact() throws IOException, InterruptedException {
 
@@ -24,9 +30,9 @@ public class CreateCOntact_Org {
 
 
 		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		wdu.maximizewindow(driver);
 		driver.get(URL);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		wdu.implicitwait(driver);
 
 		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(UN);
 		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(PWD);
