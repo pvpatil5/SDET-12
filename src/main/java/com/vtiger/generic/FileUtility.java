@@ -22,6 +22,5 @@ public class FileUtility
 		prop.load(fis);
 		String value=prop.getProperty(key);
 		return value;
-
 	}
 }

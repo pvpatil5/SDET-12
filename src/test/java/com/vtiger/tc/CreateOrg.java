@@ -24,12 +24,14 @@ import com.vtiger.generic.ExcelUtility;
 import com.vtiger.generic.FileUtility;
 import com.vtiger.generic.IConstants;
 import com.vtiger.generic.JavaUtility;
+import com.vtiger.generic.WebDriverUtility;
 
 public class CreateOrg {
 
 	JavaUtility jv = new JavaUtility();
 	FileUtility fu=  new FileUtility();
 	ExcelUtility eu= new ExcelUtility();
+	WebDriverUtility wdu= new WebDriverUtility();
 	@Test
 	public void createOrg() throws IOException {
 		int randomnumber=	jv.createRandomNumber();
@@ -48,14 +50,14 @@ public class CreateOrg {
 		String ratingDD=eu.readDatafromExcel("Sheet1", 3, 0);
 		String typeDD=eu.readDatafromExcel("Sheet1", 4, 0);
 
+		//Name of org
 		System.out.println(name+" "+orgname+" "+phonenumber+" "+indDD+" "+ratingDD+" "+typeDD);
 
 		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		wdu.maximizewindow(driver);
 		driver.get(URL);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-
+		wdu.implicitwait(driver);
+		
 		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(UN);
 		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(PWD);
 		driver.findElement(By.id("submitButton")).click();
@@ -66,52 +68,39 @@ public class CreateOrg {
 		driver.findElement(By.xpath("//input[@name='accountname']")).sendKeys(orgname);
 		driver.findElement(By.id("phone")).sendKeys(phonenumber);
 
-		Select industry = new Select(driver.findElement(By.xpath("//select[@name='industry']")));
-		industry.selectByVisibleText(indDD);
+		WebElement industry1=	driver.findElement(By.xpath("//select[@name='industry']"));
+		wdu.selectbyvisisbletextdd(industry1, indDD);
 
-		Select rating = new Select(driver.findElement(By.xpath("//select[@name='rating']")));
-		rating.selectByVisibleText(ratingDD);
+		WebElement rating= driver.findElement(By.xpath("//select[@name='rating']"));
+		wdu.selectbyvisisbletextdd(rating, ratingDD);
 
-		Select type = new Select(driver.findElement(By.xpath("//select[@name='accounttype']")));
-		type.selectByVisibleText(typeDD);
+
+		WebElement type=driver.findElement(By.xpath("//select[@name='accounttype']"));
+		wdu.selectbyvisisbletextdd(type, typeDD);
 
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-		driver.navigate().refresh();
+		wdu.refresh(driver);
 		driver.findElement(By.xpath("//img[@src='themes/softed/images/Home.PNG']")).click();
 
-		//driver.navigate().refresh();
-		//driver.findElement(By.xpath("//a[@class='hdrLink']")).click();
 		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
 
 		WebElement searchbox=driver.findElement(By.xpath("//input[@name='search_text']"));
 
-		wait.until(ExpectedConditions.elementToBeClickable(searchbox));
+		wdu.elementisclickable(driver, searchbox);
 
 		searchbox.sendKeys(orgname);
 
-		Select orgnamedd = new Select(driver.findElement(By.xpath("//div[@id='basicsearchcolumns_real']/select[@id='bas_searchfield']")));
-		orgnamedd.selectByVisibleText("Organization Name");
-
+		WebElement orgnamedd=driver.findElement(By.xpath("//div[@id='basicsearchcolumns_real']/select[@id='bas_searchfield']"));
+		wdu.selectbyvisisbletextdd(orgnamedd, "Organization Name");
 		driver.findElement(By.xpath("//input[@name='submit']")).click();
-
-		//Thread.sleep(3000);
 
 		String actualorgname=driver.findElement(By.xpath("//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']")).getText();
 
-		//String actualorgname=driver.findElement(By.xpath("//a[@title='Organizations']")).getText();
-		//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']
 		System.out.println(actualorgname);
 
 		boolean result=actualorgname.contains(orgname);
 
 		System.out.println(result);
-
-		//
-		//		//		wait.until(ExpectedConditions.elementToBeClickable(search)).click();
-		//		//		Thread.sleep(5000);
-		//		//
-		//		//		String name = driver.findElement(By.xpath("//table[@class='lvt small']//a[@title = 'Organizations']")).getText();
-		//		//		System.out.println(orgName.equals(name));
 
 	}
 
