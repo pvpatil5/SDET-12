@@ -16,7 +16,6 @@ public class LoginPage
 		PageFactory.initElements(driver, this);
 	}
 	
-	
 	@FindBy (xpath = "//input[@name='user_name']")
 	WebElement usernameEdt1;
 	
@@ -52,7 +51,7 @@ public class LoginPage
 	}
 	public void loginToApp() {             //Rule -5
 		usernameEdt1.sendKeys("admin");
-		passwordEdt.sendKeys("admin");
+		passwordEdt.sendKeys("12345");
 		loginButon.click();
 	}
     
