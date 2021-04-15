@@ -28,36 +28,42 @@ public class CreateCOntact_Org {
 	@Test
 	public void createcontact() throws IOException, InterruptedException 
 	{
-
-		String UN=fu.readDatafrompropfile(IConstants.propfilepath, "username");
-		String PWD=fu.readDatafrompropfile(IConstants.propfilepath, "password");
-		String URL=fu.readDatafrompropfile(IConstants.propfilepath, "url");
-
+		
 		WebDriver	driver= new ChromeDriver();
 		wdu.maximizewindow(driver);
-		driver.get(URL);
+		driver.get(fu.readDatafrompropfile(IConstants.propfilepath, "url"));
 		wdu.implicitwait(driver);
 
+		//Login to App
 		LoginPage lp = new LoginPage(driver);
-		lp.loginToApp(UN, PWD);
+		lp.loginToApp(fu.readDatafrompropfile(IConstants.propfilepath, "username"), fu.readDatafrompropfile(IConstants.propfilepath, "password"));
 
+		//Click on contact
 		HomePage hp = new HomePage(driver);
 		hp.getContactlnk().click();
-
+		
+		//click on create contact
 		ContactPage cp = new ContactPage(driver);
 		cp.getCreatecontactbtn().click();
-
+		
+		//Conatct Name
 		CreateContactPage ccp=new CreateContactPage(driver);
 		ccp.getLastnametxtfld().sendKeys("pavan1");
 
+		//Click on plus btn so that new window should open
 		wdu.waitandclick(driver, "//input[@name='account_name']//following-sibling::img");
 		
+		//switch to window
 		wdu.switchtowindow(driver, "childwindtit");
 
+		//select orgname
 		ccp.selectorg("TCS");
 		wdu.waitandclick(driver, "//a[@id='1']");
-		//ccp.searchsuggestion().click();
+	
+		//switch back to Contacts window
 		wdu.switchtowindow(driver, "Contacts");
+		
+		//Click on save btn
 		ccp.savebtn().click();
 
 
