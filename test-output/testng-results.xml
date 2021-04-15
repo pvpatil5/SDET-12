@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54916" started-at="2021-04-12T10:11:50Z" finished-at="2021-04-12T10:12:45Z">
+  <suite name="Default suite" duration-ms="69837" started-at="2021-04-15T11:31:54Z" finished-at="2021-04-15T11:33:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54916" started-at="2021-04-12T10:11:50Z" finished-at="2021-04-12T10:12:45Z">
+    <test name="Default test" duration-ms="69837" started-at="2021-04-15T11:31:54Z" finished-at="2021-04-15T11:33:04Z">
       <class name="com.vtiger.tc.CreateCOntact_Org">
-        <test-method status="PASS" signature="createcontact()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@148080bb]" name="createcontact" duration-ms="54830" started-at="2021-04-12T10:11:50Z" finished-at="2021-04-12T10:12:45Z">
+        <test-method status="PASS" signature="createcontact()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@148080bb]" name="createcontact" duration-ms="69729" started-at="2021-04-15T11:31:54Z" finished-at="2021-04-15T11:33:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createcontact -->

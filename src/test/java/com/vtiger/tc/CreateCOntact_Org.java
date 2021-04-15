@@ -1,13 +1,13 @@
 package com.vtiger.tc;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import com.vtiger.generic.ExcelUtility;
@@ -15,45 +15,55 @@ import com.vtiger.generic.FileUtility;
 import com.vtiger.generic.IConstants;
 import com.vtiger.generic.JavaUtility;
 import com.vtiger.generic.WebDriverUtility;
+import com.vtiger.objectrepo.ContactPage;
+import com.vtiger.objectrepo.CreateContactPage;
+import com.vtiger.objectrepo.HomePage;
+import com.vtiger.objectrepo.LoginPage;
 public class CreateCOntact_Org {
-
+	//WebDriver driver ;
 	JavaUtility jv = new JavaUtility();
 	FileUtility fu=  new FileUtility();
 	ExcelUtility eu= new ExcelUtility();
 	WebDriverUtility wdu= new WebDriverUtility();
 	@Test
-	public void createcontact() throws IOException, InterruptedException {
+	public void createcontact() throws IOException, InterruptedException 
+	{
 
 		String UN=fu.readDatafrompropfile(IConstants.propfilepath, "username");
 		String PWD=fu.readDatafrompropfile(IConstants.propfilepath, "password");
 		String URL=fu.readDatafrompropfile(IConstants.propfilepath, "url");
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver	driver= new ChromeDriver();
 		wdu.maximizewindow(driver);
 		driver.get(URL);
 		wdu.implicitwait(driver);
 
-		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(UN);
-		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(PWD);
-		driver.findElement(By.id("submitButton")).click();
-		driver.findElement(By.xpath("//a[text()='Contacts']")).click();
+		LoginPage lp = new LoginPage(driver);
+		lp.loginToApp(UN, PWD);
 
-		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
+		HomePage hp = new HomePage(driver);
+		hp.getContactlnk().click();
 
-		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("C P");
+		ContactPage cp = new ContactPage(driver);
+		cp.getCreatecontactbtn().click();
 
-		driver.findElement(By.xpath("//input[@name='account_name']//following-sibling::img")).click();
+		CreateContactPage ccp=new CreateContactPage(driver);
+		ccp.getLastnametxtfld().sendKeys("pavan1");
 
+		wdu.waitandclick(driver, "//input[@name='account_name']//following-sibling::img");
+		
 		wdu.switchtowindow(driver, "childwindtit");
-		driver.findElement(By.id("search_txt")).sendKeys("TCS");
-		driver.findElement(By.xpath("//input[@name='search']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@id='1']")).click();
+
+		ccp.selectorg("TCS");
+		wdu.waitandclick(driver, "//a[@id='1']");
+		//ccp.searchsuggestion().click();
 		wdu.switchtowindow(driver, "Contacts");
-		driver.findElement(By.xpath("//input[@class='crmButton small save']")).click();
+		ccp.savebtn().click();
+
 
 
 	}
+
 
 }
 

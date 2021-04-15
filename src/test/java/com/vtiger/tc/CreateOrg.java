@@ -25,6 +25,7 @@ import com.vtiger.generic.FileUtility;
 import com.vtiger.generic.IConstants;
 import com.vtiger.generic.JavaUtility;
 import com.vtiger.generic.WebDriverUtility;
+import com.vtiger.objectrepo.LoginPage;
 
 public class CreateOrg {
 
@@ -57,52 +58,51 @@ public class CreateOrg {
 		wdu.maximizewindow(driver);
 		driver.get(URL);
 		wdu.implicitwait(driver);
+		
+		LoginPage lp = new  LoginPage(driver);
+		lp.loginToApp(UN, PWD);
 
-		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(UN);
-		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(PWD);
-		driver.findElement(By.id("submitButton")).click();
-
-		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
-		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-
-		driver.findElement(By.xpath("//input[@name='accountname']")).sendKeys(orgname);
-		driver.findElement(By.id("phone")).sendKeys(phonenumber);
-
-		WebElement industry=	driver.findElement(By.xpath("//select[@name='industry']"));
-		wdu.selectdropdown(industry, indDD);
-
-		WebElement rating= driver.findElement(By.xpath("//select[@name='rating']"));
-		wdu.selectdropdown(rating, ratingDD);
-
-
-		WebElement type=driver.findElement(By.xpath("//select[@name='accounttype']"));
-		wdu.selectdropdown(type, typeDD);
-
-		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-		wdu.refresh(driver);
-		driver.findElement(By.xpath("//img[@src='themes/softed/images/Home.PNG']")).click();
-
-		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
-
-		WebElement searchbox=driver.findElement(By.xpath("//input[@name='search_text']"));
-
-		wdu.elementisclickable(driver, searchbox);
-
-		searchbox.sendKeys(orgname);
-
-		WebElement orgnamedd=driver.findElement(By.xpath("//div[@id='basicsearchcolumns_real']/select[@id='bas_searchfield']"));
-		wdu.selectdropdown(orgnamedd, "Organization Name");
-		driver.findElement(By.xpath("//input[@name='submit']")).click();
-
-		WebElement actualorgname=driver.findElement(By.xpath("//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']"));
-
-		wdu.waitforElement(actualorgname);
-
-		System.out.println(actualorgname.getText());
-
-		boolean result=actualorgname.getText().contains(orgname);
-
-		System.out.println(result);
+//		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
+//		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
+//
+//		driver.findElement(By.xpath("//input[@name='accountname']")).sendKeys(orgname);
+//		driver.findElement(By.id("phone")).sendKeys(phonenumber);
+//
+//		WebElement industry=	driver.findElement(By.xpath("//select[@name='industry']"));
+//		wdu.selectdropdown(industry, indDD);
+//
+//		WebElement rating= driver.findElement(By.xpath("//select[@name='rating']"));
+//		wdu.selectdropdown(rating, ratingDD);
+//
+//
+//		WebElement type=driver.findElement(By.xpath("//select[@name='accounttype']"));
+//		wdu.selectdropdown(type, typeDD);
+//
+//		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
+//		wdu.refresh(driver);
+//		driver.findElement(By.xpath("//img[@src='themes/softed/images/Home.PNG']")).click();
+//
+//		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
+//
+//		WebElement searchbox=driver.findElement(By.xpath("//input[@name='search_text']"));
+//
+//		wdu.elementisclickable(driver, searchbox);
+//
+//		searchbox.sendKeys(orgname);
+//
+//		WebElement orgnamedd=driver.findElement(By.xpath("//div[@id='basicsearchcolumns_real']/select[@id='bas_searchfield']"));
+//		wdu.selectdropdown(orgnamedd, "Organization Name");
+//		driver.findElement(By.xpath("//input[@name='submit']")).click();
+//
+//		WebElement actualorgname=driver.findElement(By.xpath("//a[text()='"+orgname+"']/ancestor::table[@class='lvt small']"));
+//
+//		wdu.waitforElement(actualorgname);
+//
+//		System.out.println(actualorgname.getText());
+//
+//		boolean result=actualorgname.getText().contains(orgname);
+//
+//		System.out.println(result);
 
 	}
 
