@@ -20,7 +20,7 @@ public class Create_Contact extends Base {
 	public void craetecontact() {
 
 		HomePage hp = new HomePage(driver);
-		hp.getContactlnk();
+		hp.getContactlnk().click();
 
 		ContactPage cp = new ContactPage(driver);
 		cp.getCreatecontactbtn().click();
