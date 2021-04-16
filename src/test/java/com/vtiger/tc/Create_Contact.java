@@ -5,29 +5,32 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import com.vtiger.generic.Base;
+import com.vtiger.objectrepo.ContactPage;
+import com.vtiger.objectrepo.CreateContactPage;
+import com.vtiger.objectrepo.HomePage;
 import com.vtiger.objectrepo.LoginPage;
 public class Create_Contact extends Base {
 
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void craetecontact() {
 
-		//Base base = new Base();
-		Create_Contact cc = new  Create_Contact();
-		//WebDriver driver=cc.launchandlogin();
-	
-		driver.findElement(By.xpath("//a[text()='Contacts']")).click();
+		HomePage hp = new HomePage(driver);
+		hp.getContactlnk();
 
-		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
+		ContactPage cp = new ContactPage(driver);
+		cp.getCreatecontactbtn().click();
 
-		Select title = new Select(driver.findElement(By.xpath("//select[@name='salutationtype']")));
-		title.selectByVisibleText("Ms.");
-
-		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Milana");
-		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("C P");
-
-		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
+		CreateContactPage ccp = new CreateContactPage(driver);
+		wdu.selectdropdown(ccp.getSelectinitial(), "Mr.");
+		
+		ccp.getfirstnametxtfld().sendKeys("XYZ");
+		ccp.getLastnametxtfld().sendKeys("ABC");
+		ccp.getsavebtn().click();
 
 	}
 

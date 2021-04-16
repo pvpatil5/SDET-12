@@ -10,7 +10,7 @@ import com.vtiger.generic.WebDriverUtility;
 public class HomePage 
 {
 	WebDriver driver;
-	public 	WebDriverUtility wdu = new WebDriverUtility();
+	public WebDriverUtility wdu = new WebDriverUtility();
 
 	@FindBy(xpath="//a[text()='Organizations']")
 	private WebElement orglink;
@@ -25,16 +25,29 @@ public class HomePage
 	public WebElement getContactlnk() {
 		return contactlnk;
 	}
+	@FindBy(xpath="//img[@src='themes/softed/images/Home.PNG']")
+	private WebElement homepagelnk;
+
+
+	
+
+	public WebElement getHomepagelnk() {
+		return homepagelnk;
+	}
 	@FindBy(xpath = "//img[contains(@src,'user.PNG')]")
 	private WebElement adminstrationImg;
 
 	@FindBy(linkText = "Sign Out")
 	private WebElement signOutLnk;
 
+	
 	public HomePage(WebDriver driver) 
 	{
+		this.driver = driver;	
 		PageFactory.initElements(driver, this);
 	}
+	
+
 	public void logout() {
 		wdu.movetoelement(driver, adminstrationImg);
 		signOutLnk.click();

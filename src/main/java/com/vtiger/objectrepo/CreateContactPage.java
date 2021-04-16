@@ -9,6 +9,22 @@ public class CreateContactPage {
 	public CreateContactPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(xpath="//select[@name='salutationtype']")
+	private WebElement selectinitial;
+	
+
+	public WebElement getSelectinitial() {
+		return selectinitial;
+	}
+	
+	@FindBy(xpath="//input[@name='firstname']")
+	private WebElement firstnametxtfld;
+	
+
+	public WebElement getfirstnametxtfld() {
+		return firstnametxtfld;
+	}
 
 	@FindBy(xpath="//input[@name='lastname']")
 	private WebElement lastnametxtfld;
@@ -45,10 +61,10 @@ public class CreateContactPage {
 	@FindBy(xpath="//input[@class='crmButton small save']")
 	private WebElement savebtn;
 	
-	public WebElement savebtn() {
+	public WebElement getsavebtn() {
 		return savebtn;
 	}
-	
+
 	public void selectorg(String orgname) {
 		searchboxchild.sendKeys(orgname);
 		searchnowchild.click();

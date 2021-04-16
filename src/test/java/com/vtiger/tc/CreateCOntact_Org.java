@@ -21,18 +21,15 @@ import com.vtiger.objectrepo.CreateContactPage;
 import com.vtiger.objectrepo.HomePage;
 import com.vtiger.objectrepo.LoginPage;
 public class CreateCOntact_Org extends Base {
-	//WebDriver driver ;
-	JavaUtility jv = new JavaUtility();
-	FileUtility fu=  new FileUtility();
-	ExcelUtility eu= new ExcelUtility();
-	WebDriverUtility wdu= new WebDriverUtility();
+//	//WebDriver driver ;
+//	JavaUtility jv = new JavaUtility();
+//	FileUtility fu=  new FileUtility();
+//	ExcelUtility eu= new ExcelUtility();
+//	WebDriverUtility wdu= new WebDriverUtility();
 	@Test
 	public void createcontact() throws IOException, InterruptedException 
 	{
-		
-		Base base = new  Base();
-		WebDriver	driver=base.launchandlogin();
-
+	
 		//Click on contact
 		HomePage hp = new HomePage(driver);
 		hp.getContactlnk().click();
@@ -59,7 +56,7 @@ public class CreateCOntact_Org extends Base {
 		wdu.switchtowindow(driver, "Contacts");
 
 		//Click on save btn
-		ccp.savebtn().click();
+		ccp.getsavebtn().click();
 
 
 
