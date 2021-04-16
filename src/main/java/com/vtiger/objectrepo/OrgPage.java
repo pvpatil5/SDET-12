@@ -13,6 +13,10 @@ public class OrgPage
 	}
 	@FindBy(xpath="//img[@title='Create Organization...']")
 	private WebElement createorgbtn;
+	
+	public WebElement getCreateorgbtn() {
+		return createorgbtn;
+	}
 
 
 }

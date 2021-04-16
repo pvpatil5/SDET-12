@@ -54,4 +54,9 @@ public class CreateContactPage {
 		searchnowchild.click();
 	}
 	
+	public void createcontact(String contactname) {
+		lastnametxtfld.sendKeys(contactname);
+		savebtn.click();
+	}
+	
 }
