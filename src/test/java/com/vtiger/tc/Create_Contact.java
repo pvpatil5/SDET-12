@@ -33,5 +33,25 @@ public class Create_Contact extends Base {
 		ccp.getsavebtn().click();
 
 	}
+	
+
+	@Test
+	public void craetecontact1() {
+
+		HomePage hp = new HomePage(driver);
+		hp.getContactlnk().click();
+
+		ContactPage cp = new ContactPage(driver);
+		cp.getCreatecontactbtn().click();
+
+		CreateContactPage ccp = new CreateContactPage(driver);
+		wdu.selectdropdown(ccp.getSelectinitial(), "Mr.");
+		
+		ccp.getfirstnametxtfld().sendKeys("XYZ");
+		ccp.getLastnametxtfld().sendKeys("ABC");
+		ccp.getsavebtn().click();
+
+	}
+
 
 }

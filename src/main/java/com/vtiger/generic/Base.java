@@ -1,7 +1,6 @@
 package com.vtiger.generic;
 
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,18 +11,18 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-
+import org.testng.annotations.Parameters;
 import com.vtiger.objectrepo.HomePage;
 import com.vtiger.objectrepo.LoginPage;
 
 public class Base
 {
-	public WebDriver	driver;
+	
 	public	JavaUtility jv = new JavaUtility();
 	public FileUtility fu=  new FileUtility();
 	public ExcelUtility eu= new ExcelUtility();
 	public WebDriverUtility wdu= new WebDriverUtility();
-
+	public WebDriver	driver;
 
 /**
  * Create DB Connection
@@ -47,6 +46,7 @@ public class Base
 	 * Launch Browser and get the URL
 	 * @throws IOException
 	 */
+	//@Parameters("browser")
 	@BeforeClass
 	public void launchBrowser() throws IOException {
 
@@ -72,16 +72,17 @@ public class Base
 	}
 	
 	@BeforeMethod
-	public void logintoapp() throws IOException {
+	public void logintoapp() throws IOException 
+	{
 		LoginPage lp = new LoginPage(driver);
 		lp.loginToApp(fu.readDatafrompropfile(IConstants.propfilepath, "username"), fu.readDatafrompropfile(IConstants.propfilepath, "password"));
 
 	}
 	
 	@AfterMethod
-	public void logoutfromApp() {
+	public void logoutfromApp() 
+	{
 		HomePage hp = new HomePage(driver);
 		hp.logout();
 	}
-	
 }
