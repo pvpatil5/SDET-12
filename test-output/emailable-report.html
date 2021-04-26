@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>TestNG Report</title>
@@ -7,53 +7,23 @@
 </head>
 <body>
 <table>
-<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">Testrun1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">74,070</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Testrun2</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">3,999</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">1</th><th class="num attn">1</th><th class="num">0</th><th class="num">78,069</th><th colspan="2"></th></tr>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test-Runner-1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">54,176</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Test-Runner-2</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">54,178</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">1</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">108,354</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Testrun1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.vtiger.tc.CreateOrg</td><td><a href="#m0">createOrg</a></td><td rowspan="1">1618844110218</td><td rowspan="1">51053</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Testrun2 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.vtiger.tc.Create_Contact</td><td><a href="#m1">launchBrowser</a></td><td rowspan="1">1618844166313</td><td rowspan="1">3875</td></tr><tr><th colspan="4">Testrun2 &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="4">com.vtiger.tc.Create_Contact</td><td><a href="#m2">afterSuite</a></td><td rowspan="1">1618844170472</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m3">closeBrowser</a></td><td rowspan="1">1618844170303</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m4">logintoapp</a></td><td rowspan="1">1618844170213</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m5">logoutfromApp</a></td><td rowspan="1">1618844170292</td><td rowspan="1">0</td></tr><tr><th colspan="4">Testrun2 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.vtiger.tc.Create_Contact</td><td><a href="#m6">craetecontact</a></td><td rowspan="1">1618844170236</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test-Runner-1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.vtiger.tc.Create_Contact</td><td><a href="#m0">craetecontact</a></td><td rowspan="1">1619423271220</td><td rowspan="1">29594</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Test-Runner-2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.vtiger.tc.CreateCOntact_Org</td><td><a href="#m1">createcontact</a></td><td rowspan="1">1619423268901</td><td rowspan="1">31988</td></tr></tbody>
 </table>
-<h2>Testrun1</h2><h3 id="m0">com.vtiger.tc.CreateOrg#createOrg</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Testrun2</h2><h3 id="m1">com.vtiger.tc.Create_Contact#launchBrowser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
-from disconnected: received Inspector.detached event
-  (Session info: chrome=89.0.4389.128)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMAR&apos;, ip: &apos;192.168.114.153&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_172&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\AMAR-G\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54402}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 352b454852f8ae4f8d9172affef65247
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-	at com.vtiger.generic.Base.launchBrowser(Base.java:68)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.vtiger.tc.Create_Contact#afterSuite</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.vtiger.tc.Create_Contact#closeBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.vtiger.tc.Create_Contact#logintoapp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.vtiger.tc.Create_Contact#logoutfromApp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.vtiger.tc.Create_Contact#craetecontact</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
-from disconnected: received Inspector.detached event
-  (Session info: chrome=89.0.4389.128)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMAR&apos;, ip: &apos;192.168.114.153&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_172&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\AMAR-G\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54402}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 352b454852f8ae4f8d9172affef65247
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-	at com.vtiger.generic.Base.launchBrowser(Base.java:68)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test-Runner-1</h2><h3 id="m0">com.vtiger.tc.Create_Contact#craetecontact</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test-Runner-2</h2><h3 id="m1">com.vtiger.tc.CreateCOntact_Org#createcontact</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at com.vtiger.tc.CreateCOntact_Org.createcontact(CreateCOntact_Org.java:64)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

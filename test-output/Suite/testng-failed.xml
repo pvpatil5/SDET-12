@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Testrun2(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="com.vtiger.generic.ListnersUtility"/>
+  </listeners>
+  <test thread-count="2" name="Test-Runner-2(failed)" parallel="tests">
     <classes>
-      <class name="com.vtiger.tc.Create_Contact">
+      <class name="com.vtiger.tc.CreateCOntact_Org">
         <methods>
+          <include name="createcontact"/>
           <include name="beforesuite"/>
           <include name="afterSuite"/>
           <include name="logoutfromApp"/>
           <include name="launchBrowser"/>
           <include name="logintoapp"/>
-          <include name="craetecontact"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.vtiger.tc.Create_Contact -->
+      </class> <!-- com.vtiger.tc.CreateCOntact_Org -->
     </classes>
-  </test> <!-- Testrun2(failed) -->
+  </test> <!-- Test-Runner-2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

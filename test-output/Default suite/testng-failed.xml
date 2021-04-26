@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vtiger.tc.Create_Contact">
+      <class name="extentreport.Extent12">
         <methods>
-          <include name="beforesuite"/>
-          <include name="afterSuite"/>
-          <include name="logoutfromApp"/>
-          <include name="launchBrowser"/>
-          <include name="logintoapp"/>
-          <include name="craetecontact"/>
-          <include name="closeBrowser"/>
+          <include name="getTitle"/>
+          <include name="closereport"/>
+          <include name="setup"/>
+          <include name="launch"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- com.vtiger.tc.Create_Contact -->
+      </class> <!-- extentreport.Extent12 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
