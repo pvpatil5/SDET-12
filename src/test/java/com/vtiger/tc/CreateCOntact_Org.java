@@ -24,11 +24,7 @@ import com.vtiger.objectrepo.HomePage;
 import com.vtiger.objectrepo.LoginPage;
 
 public class CreateCOntact_Org extends Base {
-	//	//WebDriver driver ;
-	//	JavaUtility jv = new JavaUtility();
-	//	FileUtility fu=  new FileUtility();
-	//	ExcelUtility eu= new ExcelUtility();
-	//	WebDriverUtility wdu= new WebDriverUtility();
+
 	@Test
 	public void createcontact() throws IOException, InterruptedException 
 	{
