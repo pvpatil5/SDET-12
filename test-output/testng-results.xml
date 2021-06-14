@@ -1,102 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="54178" started-at="2021-04-26T13:17:31 IST" finished-at="2021-04-26T13:18:25 IST">
+  <suite name="Default suite" duration-ms="83103" started-at="2021-06-04T12:06:58 IST" finished-at="2021-06-04T12:08:21 IST">
     <groups>
     </groups>
-    <test name="Test-Runner-1" duration-ms="54176" started-at="2021-04-26T13:17:31 IST" finished-at="2021-04-26T13:18:25 IST">
+    <test name="Default test" duration-ms="83103" started-at="2021-06-04T12:06:58 IST" finished-at="2021-06-04T12:08:21 IST">
       <class name="com.vtiger.tc.Create_Contact">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.vtiger.tc.Create_Contact@35047d03]" name="launchBrowser" is-config="true" duration-ms="8810" started-at="2021-04-26T13:17:31 IST" finished-at="2021-04-26T13:17:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="logintoapp()[pri:0, instance:com.vtiger.tc.Create_Contact@35047d03]" name="logintoapp" is-config="true" duration-ms="10708" started-at="2021-04-26T13:17:40 IST" finished-at="2021-04-26T13:17:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logintoapp -->
-        <test-method status="PASS" signature="craetecontact()[pri:0, instance:com.vtiger.tc.Create_Contact@35047d03]" name="craetecontact" duration-ms="29594" started-at="2021-04-26T13:17:51 IST" finished-at="2021-04-26T13:18:20 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- craetecontact -->
-        <test-method status="PASS" signature="logoutfromApp()[pri:0, instance:com.vtiger.tc.Create_Contact@35047d03]" name="logoutfromApp" is-config="true" duration-ms="2991" started-at="2021-04-26T13:18:20 IST" finished-at="2021-04-26T13:18:23 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutfromApp -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.vtiger.tc.Create_Contact@35047d03]" name="closeBrowser" is-config="true" duration-ms="1397" started-at="2021-04-26T13:18:23 IST" finished-at="2021-04-26T13:18:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.vtiger.tc.Create_Contact -->
-    </test> <!-- Test-Runner-1 -->
-    <test name="Test-Runner-2" duration-ms="54178" started-at="2021-04-26T13:17:31 IST" finished-at="2021-04-26T13:18:25 IST">
-      <class name="com.vtiger.tc.CreateCOntact_Org">
-        <test-method status="PASS" signature="beforesuite()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="beforesuite" is-config="true" duration-ms="46" started-at="2021-04-26T13:17:30 IST" finished-at="2021-04-26T13:17:31 IST">
+        <test-method status="PASS" signature="beforesuite()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="beforesuite" is-config="true" duration-ms="29" started-at="2021-06-04T12:06:57 IST" finished-at="2021-06-04T12:06:58 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforesuite -->
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="launchBrowser" is-config="true" duration-ms="9652" started-at="2021-04-26T13:17:31 IST" finished-at="2021-04-26T13:17:41 IST">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="launchBrowser" is-config="true" duration-ms="11519" started-at="2021-06-04T12:06:58 IST" finished-at="2021-06-04T12:07:09 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="logintoapp()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="logintoapp" is-config="true" duration-ms="7591" started-at="2021-04-26T13:17:41 IST" finished-at="2021-04-26T13:17:48 IST">
+        <test-method status="PASS" signature="logintoapp()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="logintoapp" is-config="true" duration-ms="20287" started-at="2021-06-04T12:07:09 IST" finished-at="2021-06-04T12:07:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logintoapp -->
-        <test-method status="FAIL" signature="createcontact()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="createcontact" duration-ms="31988" started-at="2021-04-26T13:17:48 IST" finished-at="2021-04-26T13:18:20 IST">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at com.vtiger.tc.CreateCOntact_Org.createcontact(CreateCOntact_Org.java:64)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1257)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:425)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:66)
-at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at java.lang.Thread.run(Thread.java:748)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="craetecontact()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="craetecontact" duration-ms="45262" started-at="2021-06-04T12:07:29 IST" finished-at="2021-06-04T12:08:15 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createcontact -->
-        <test-method status="PASS" signature="logoutfromApp()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="logoutfromApp" is-config="true" duration-ms="3011" started-at="2021-04-26T13:18:21 IST" finished-at="2021-04-26T13:18:24 IST">
+        </test-method> <!-- craetecontact -->
+        <test-method status="PASS" signature="logoutfromApp()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="logoutfromApp" is-config="true" duration-ms="4589" started-at="2021-06-04T12:08:15 IST" finished-at="2021-06-04T12:08:19 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutfromApp -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="closeBrowser" is-config="true" duration-ms="930" started-at="2021-04-26T13:18:24 IST" finished-at="2021-04-26T13:18:25 IST">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="closeBrowser" is-config="true" duration-ms="1243" started-at="2021-06-04T12:08:19 IST" finished-at="2021-06-04T12:08:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.vtiger.tc.CreateCOntact_Org@6580cfdd]" name="afterSuite" is-config="true" duration-ms="2" started-at="2021-04-26T13:18:27 IST" finished-at="2021-04-26T13:18:27 IST">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.vtiger.tc.Create_Contact@1a3869f4]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-06-04T12:08:21 IST" finished-at="2021-06-04T12:08:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.vtiger.tc.CreateCOntact_Org -->
-    </test> <!-- Test-Runner-2 -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.vtiger.tc.Create_Contact -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -3,15 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="extentreport.Extent12">
+      <class name="com.vtiger.tc.Create_Contact">
         <methods>
-          <include name="getTitle"/>
-          <include name="closereport"/>
-          <include name="setup"/>
-          <include name="launch"/>
-          <include name="close"/>
+          <include name="beforesuite"/>
+          <include name="afterSuite"/>
+          <include name="logoutfromApp"/>
+          <include name="launchBrowser"/>
+          <include name="logintoapp"/>
+          <include name="craetecontact"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- extentreport.Extent12 -->
+      </class> <!-- com.vtiger.tc.Create_Contact -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
