@@ -3,11 +3,12 @@ package com.vtiger.generic;
 public interface IConstants 
 {
 
-	public String propfilepath="../SDET-12/commonData.properties";
-	String excelpath="../SDET-12/TestData.xlsx";
+	public static String DirPath = System.getProperty("user.dir");
+	public String propfilepath=DirPath+"/commonData.properties";
+	String excelpath=DirPath+"/TestData.xlsx";
 	int implicitwaittime=10;
 	int explicitwaittime=20;
 
-	
-	
+
+
 }

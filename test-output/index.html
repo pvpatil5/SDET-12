@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,6 +24,7 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
@@ -48,8 +50,13 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+<<<<<<< HEAD
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
                     <span>C:\Users\AMAR-G\git\SDET-12\testng.xml</span>
+=======
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\AMAR-G\AppData\Local\Temp\testng-eclipse-1225769004\testng-customsuite.xml</span>
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,8 +108,13 @@
                     </span>
                     <div class="method-list-content failed suite-Suite">
                       <span>
+<<<<<<< HEAD
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vtiger.tc.Create_Contact" hash-for-method="craetecontact">craetecontact</a> <!-- method navigator-link -->
+=======
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.vtiger.tc.CreateOrg" hash-for-method="createOrg">createOrg</a> <!-- method navigator-link -->
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
                       </span>
                       <br/>
                       <span>
@@ -164,12 +176,18 @@ Session ID: 5f85f5812bac50932c757f00e87acad2
           </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
               <img src="failed.png"/>
               <span class="class-name">com.vtiger.tc.Create_Contact</span>
+=======
+              <img src="passed.png"/>
+              <span class="class-name">com.vtiger.tc.CreateOrg</span>
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="craetecontact">
                   </a> <!-- craetecontact -->
                   <span class="method-name">craetecontact</span>
@@ -198,6 +216,11 @@ Session ID: 5a87d30f63e97092a6d5bacd74fb0a53
 	at com.vtiger.tc.Create_Contact.craetecontact(Create_Contact.java:26)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
+=======
+                  <a name="createOrg">
+                  </a> <!-- createOrg -->
+                  <span class="method-name">createOrg</span>
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,11 +228,16 @@ Session ID: 5a87d30f63e97092a6d5bacd74fb0a53
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\AMAR-G\git\SDET-12\testng.xml</span>
+=======
+            <span class="header-content">C:\Users\AMAR-G\AppData\Local\Temp\testng-eclipse-1225769004\testng-customsuite.xml</span>
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<<<<<<< HEAD
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;-1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;test name=&quot;Test1&quot;&gt;
@@ -218,8 +246,13 @@ Session ID: 5a87d30f63e97092a6d5bacd74fb0a53
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test1 --&gt;
   &lt;test name=&quot;Test2&quot;&gt;
+=======
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
     &lt;classes&gt;
-      &lt;class name=&quot;com.vtiger.tc.Create_Contact&quot;/&gt;
+      &lt;class name=&quot;com.vtiger.tc.CreateOrg&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test2 --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -266,6 +299,7 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createOrg')
 data.setCell(0, 2, 'com.vtiger.tc.CreateOrg')
+<<<<<<< HEAD
 data.setCell(0, 3, 20091);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'craetecontact')
@@ -278,6 +312,16 @@ return data;
               <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
+=======
+data.setCell(0, 3, 29747);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -301,7 +345,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.vtiger.tc.Create_Contact</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.vtiger.tc.CreateOrg</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforesuite</span>
                 <span class="method-start">0 ms</span>
@@ -336,6 +380,7 @@ return data;
               <div class="chronological-class-name">com.vtiger.tc.Create_Contact</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">launchBrowser</span>
+<<<<<<< HEAD
                 <span class="method-start">56402 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
@@ -359,10 +404,34 @@ return data;
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
                 <span class="method-start">95704 ms</span>
+=======
+                <span class="method-start">45 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">logintoapp</span>
+                <span class="method-start">6227 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">createOrg</span>
+                <span class="method-start">12213 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logoutfromApp</span>
+                <span class="method-start">41977 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">44175 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">45079 ms</span>
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

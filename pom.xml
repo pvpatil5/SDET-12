@@ -29,8 +29,14 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
-			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<pluginManagement>
@@ -41,7 +47,7 @@
 					<version>3.0.0-M5</version>
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
+							<suiteXmlFile>testng_batch.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

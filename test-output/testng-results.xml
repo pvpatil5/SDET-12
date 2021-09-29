@@ -2,6 +2,7 @@
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
+
   <suite name="Suite" duration-ms="95607" started-at="2021-04-19T17:21:51Z" finished-at="2021-04-19T17:23:27Z">
     <groups>
     </groups>
@@ -78,4 +79,42 @@
       </class> <!-- com.vtiger.tc.Create_Contact -->
     </test> <!-- Test2 -->
   </suite> <!-- Suite -->
+=======
+  <suite name="Default suite" duration-ms="45014" started-at="2021-06-14T21:59:04 IST" finished-at="2021-06-14T21:59:49 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="45014" started-at="2021-06-14T21:59:04 IST" finished-at="2021-06-14T21:59:49 IST">
+      <class name="com.vtiger.tc.CreateOrg">
+        <test-method status="PASS" signature="beforesuite()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="beforesuite" is-config="true" duration-ms="15" started-at="2021-06-14T21:59:04 IST" finished-at="2021-06-14T21:59:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforesuite -->
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="launchBrowser" is-config="true" duration-ms="6158" started-at="2021-06-14T21:59:04 IST" finished-at="2021-06-14T21:59:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="logintoapp()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="logintoapp" is-config="true" duration-ms="5978" started-at="2021-06-14T21:59:10 IST" finished-at="2021-06-14T21:59:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoapp -->
+        <test-method status="PASS" signature="createOrg()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="createOrg" duration-ms="29747" started-at="2021-06-14T21:59:16 IST" finished-at="2021-06-14T21:59:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createOrg -->
+        <test-method status="PASS" signature="logoutfromApp()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="logoutfromApp" is-config="true" duration-ms="2198" started-at="2021-06-14T21:59:46 IST" finished-at="2021-06-14T21:59:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutfromApp -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="closeBrowser" is-config="true" duration-ms="868" started-at="2021-06-14T21:59:48 IST" finished-at="2021-06-14T21:59:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.vtiger.tc.CreateOrg@1a3869f4]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-06-14T21:59:49 IST" finished-at="2021-06-14T21:59:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.vtiger.tc.CreateOrg -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+
 </testng-results>

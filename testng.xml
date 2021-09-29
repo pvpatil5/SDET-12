@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite name="Suite"  thread-count="5" parallel="tests">
   <test name="Test1">
     <classes>
@@ -13,4 +14,24 @@
      
     </classes>
   </test> <!-- Test -->
+=======
+<suite name="Suite" thread-count="2" parallel="tests">
+	<listeners>
+		<listener class-name="com.vtiger.generic.ListnersUtility" />
+	</listeners>
+
+	<test name="Test-Runner-1">
+
+		<classes>
+			<class name="com.vtiger.tc.Create_Contact" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="Test-Runner-2">
+		<classes>
+			<class name="com.vtiger.tc.CreateCOntact_Org" />
+		</classes>
+	</test> <!-- Test -->
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
 </suite> <!-- Suite -->

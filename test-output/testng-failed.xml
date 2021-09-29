@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test name="Test1(failed)">
@@ -17,6 +18,11 @@
     </classes>
   </test> <!-- Test1(failed) -->
   <test name="Test2(failed)">
+=======
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+>>>>>>> 4c1adb27f38d6000a0ce737b4e4ac2aa520fb5c7
     <classes>
       <class name="com.vtiger.tc.Create_Contact">
         <methods>
