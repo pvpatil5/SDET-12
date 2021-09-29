@@ -18,7 +18,7 @@ import com.vtiger.objectrepo.LoginPage;
 
 public class Base
 {
-	public WebDriver	driver;
+	public WebDriver driver;
 	public	JavaUtility jv = new JavaUtility();
 	public FileUtility fu=  new FileUtility();
 	public ExcelUtility eu= new ExcelUtility();
