@@ -7,6 +7,7 @@ public class RahulClass1 {
 
 		
 		System.out.println("For Pavan");
+		System.out.println("For Pavan");
 
 		System.out.println("For Rahul");
 		System.out.println("For Rahul");
